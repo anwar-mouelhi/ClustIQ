@@ -1,0 +1,97 @@
+entity: customer_360
+
+columns:
+  - name: customer_id
+    type: string
+    required: true
+    description: Identifiant unique du client
+
+  - name: age_range
+    type: string
+    required: false
+    description: "Tranche d'âge du client (ex. '25-34')"
+
+  - name: gender
+    type: string
+    required: false
+    description: Genre du client (M/F)
+
+  - name: region
+    type: string
+    required: false
+    description: Région / zone géographique du client
+
+  - name: customer_category
+    type: string
+    required: false
+    description: "Catégorie du client (ex. Basic/Standard/Premium)"
+
+  - name: account_id
+    type: string
+    required: true
+    description: Identifiant unique du compte
+
+  - name: account_type
+    type: string
+    required: false
+    description: Type de compte (ex. fréquence de relevé, produit d'épargne...)
+
+  - name: account_open_date
+    type: date
+    required: false
+    description: Date d'ouverture du compte
+
+  - name: account_balance
+    type: decimal
+    required: false
+    description: Solde du compte au moment de la transaction
+
+  - name: transaction_id
+    type: string
+    required: true
+    description: Identifiant unique de la transaction
+
+  - name: transaction_date
+    type: date
+    required: true
+    description: Date de la transaction
+
+  - name: transaction_amount
+    type: decimal
+    required: true
+    description: Montant de la transaction
+
+  - name: transaction_type
+    type: string
+    required: false
+    description: Type / sens de la transaction (crédit, débit, retrait...)
+
+  - name: transaction_frequency
+    type: integer
+    required: false
+    description: Nombre de transactions du client sur la période observée (agrégat client répété par ligne)
+
+  - name: product_type
+    type: string
+    required: false
+    description: Type de produit souscrit (ex. virement permanent, assurance...)
+
+  - name: product_subscription_date
+    type: date
+    required: false
+    description: Date de souscription du produit
+
+  - name: loan_amount
+    type: decimal
+    required: false
+    description: Montant total du/des crédit(s) associé(s) au compte
+
+  - name: loan_status
+    type: string
+    required: false
+    description: Statut du crédit (en cours, remboursé, en défaut...)
+
+  - name: card_type
+    type: string
+    required: false
+    description: Type de carte bancaire détenue

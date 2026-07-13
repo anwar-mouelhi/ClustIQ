@@ -1,0 +1,28 @@
+host: "${MYSQL_HOST:localhost}"
+port: "${MYSQL_PORT:3306}"
+database: "${MYSQL_DATABASE}"
+user: "${MYSQL_USER:root}"
+password: "${MYSQL_PASSWORD:}"
+
+ingestion_chunksize: 5000
+transformation_chunksize: 2000
+segmentation_chunksize: 2000
+
+staging_tables:
+  customers: stg_customers
+  accounts: stg_accounts
+  transactions: stg_transactions
+  loans: stg_loans
+  cards: stg_cards
+  products: stg_products
+  districts: stg_districts
+  dispositions: stg_dispositions
+
+transformation_tables:
+  customer_attributes: customer_attributes
+  agg_loans: agg_loans
+  agg_cards: agg_cards
+  agg_products: agg_products
+
+customer_360_view: customer_360
+segmentation_table: customer_segments

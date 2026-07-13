@@ -1,0 +1,16 @@
+features:
+  numeric:
+    - avg_transaction_amount
+    - transaction_frequency
+    - avg_account_balance
+    - nb_products
+    - account_age_days
+    - total_loan_amount
+
+kmeans:
+  k_min: 2
+  k_max: 8
+  fixed_k: null
+  seed: 42
+  max_iter: 50
+  tol: 0.0001

@@ -1,0 +1,47 @@
+source: stb
+base_path: data/raw/stb
+delimiter: ";"
+encoding: "utf-8"
+quote_char: "\""
+
+entities:
+
+  customers:
+    source_file: "TODO_clients.csv"
+    columns: {}
+    transforms: []
+
+  districts:
+    source_file: "TODO_regions.csv"
+    columns: {}
+    transforms: []
+
+  dispositions:
+    source_file: "TODO_liaison_client_compte.csv"
+    columns: {}
+    transforms: []
+
+  accounts:
+    source_file: "TODO_comptes.csv"
+    columns: {}
+    transforms: []
+
+  transactions:
+    source_file: "TODO_transactions.csv"
+    columns: {}
+    transforms: []
+
+  loans:
+    source_file: "TODO_credits.csv"
+    columns: {}
+    transforms: []
+
+  cards:
+    source_file: "TODO_cartes.csv"
+    columns: {}
+    transforms: []
+
+  products:
+    source_file: "TODO_produits.csv"
+    columns: {}
+    transforms: []

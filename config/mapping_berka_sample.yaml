@@ -1,0 +1,91 @@
+source: berka_sample
+base_path: data/raw/berka_sample
+delimiter: ";"
+encoding: "utf-8"
+quote_char: "\""
+
+entities:
+
+  customers:
+    source_file: client.csv
+    columns:
+      client_id: customer_id
+      district_id: district_id
+    transforms:
+      - function: berka_split_birth_number
+        input: birth_number
+        outputs: [birth_date, gender]
+
+  districts:
+    source_file: district.csv
+    columns:
+      A1: district_id
+      A3: region
+    transforms: []
+
+  dispositions:
+    source_file: disp.csv
+    columns:
+      disp_id: disposition_id
+      client_id: customer_id
+      account_id: account_id
+      type: disposition_type
+    transforms: []
+
+  accounts:
+    source_file: account.csv
+    columns:
+      account_id: account_id
+      district_id: district_id
+      frequency: account_type
+    transforms:
+      - function: yymmdd_to_date
+        input: date
+        output: account_open_date
+
+  transactions:
+    source_file: trans.csv
+    columns:
+      trans_id: transaction_id
+      account_id: account_id
+      amount: transaction_amount
+      balance: account_balance
+      type: transaction_type
+    transforms:
+      - function: yymmdd_to_date
+        input: date
+        output: transaction_date
+
+  loans:
+    source_file: loan.csv
+    columns:
+      loan_id: loan_id
+      account_id: account_id
+      amount: loan_amount
+      status: loan_status
+    transforms:
+      - function: yymmdd_to_date
+        input: date
+        output: loan_date
+
+  cards:
+    source_file: card.csv
+    columns:
+      card_id: card_id
+      disp_id: disposition_id
+      type: card_type
+    transforms:
+      - function: yymmdd_to_date
+        input: issued
+        output: card_issue_date
+
+  products:
+    source_file: order.csv
+    columns:
+      order_id: product_id
+      account_id: account_id
+      k_symbol: product_type
+      amount: product_amount
+    transforms: []
+    unavailable_columns:
+      - product_subscription_date
